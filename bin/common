@@ -111,7 +111,7 @@ _universal_packaging_proc_count() {
 universal_packaging_default_web_proc() {
   local ctxDir=$1
   if [ $(_universal_packaging_proc_count $ctxDir) -eq 1 ]; then
-    echo "web: $(_universal_packaging_procs $ctxDir) -Dhttp.port=\$PORT -javaagent:newrelic/newrelic.jar"
+    echo "web: $(_universal_packaging_procs $ctxDir) -Dhttp.port=\$PORT -J-javaagent:newrelic/newrelic.jar"
   fi
 }
 
